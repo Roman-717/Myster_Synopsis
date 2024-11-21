@@ -1,71 +1,62 @@
-# mister-synopsis README
+# Mister_Synopsis extension
 
-This is the README for your extension "mister-synopsis". After writing up a brief description, we recommend including the following sections.
+Расширение для vscode, помогающее вести конспекты
 
-## Features
+# Команды:
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Добавление новой директории для конспектов
+Команда: extension.addNewDirectory
+Описание: Создает новую директорию для хранения конспектов. Можно указать название директории и путь, где она будет создана.
+Пример использования:
 
-For example if there is an image subfolder under your extension project workspace:
+- Введите команду Add New Directory.
+- Введите название директории, например, MyNotes.
+- Укажите путь, например, /home/user/Documents/Notes.
+- После этого в указанном пути будет создана директория MyNotes.
 
-\!\[feature X\]\(images/feature-x.png\)
+## Добавление нового конспекта в текущую директорию
+Команда: extension.addNewNotebook
+Описание: Создает новый конспект в формате Markdown (.md) в указанной директории. Можно выбрать директорию и указать название файла.
+Пример использования:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Введите команду Add New Notebook.
+- Введите название файла конспекта, например, JavaScript_Notes.
+- Выберите директорию для создания файла, например, /home/user/Documents/Notes.
+- После этого будет создан файл JavaScript_Notes.md в указанной директории.
 
-## Requirements
+## Добавление тегов к текущему конспекту
+Команда: extension.addTagsToNotebook
+Описание: Добавляет теги к текущему открытому конспекту. Теги добавляются в верхнюю часть файла в формате <!-- Tags: tag1, tag2 -->.
+Пример использования:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Введите команду Add Tags to Notebook.
+- Введите теги через запятую, например, JavaScript, Notes, Programming.
+- Теги будут добавлены в файл в начале, если их еще нет, или обновят существующие.
 
-## Extension Settings
+## Выделение текста цветом
+Команда: extension.highlightTextInColor
+Описание: Позволяет выделить текст в текущем конспекте цветом. Для этого нужно ввести цвет в формате имени (например, red) или в формате HEX (например, #ff0000).
+Пример использования:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- Введите команду Highlight Text in Color.
+- Введите название цвета, например, yellow или HEX-значение, например, #ff6347.
+- Выделенный текст будет обёрнут в HTML-тег <span style="color: color;">, и его цвет изменится.
 
-For example:
+## Поиск конспектов по тегу
+Команда: extension.showNotebooksByTag
+Описание: Позволяет искать конспекты по тегу. Можно выбрать директорию и подкаталоги, в которых будет произведен поиск. Результатом будет список файлов, содержащих указанный тег.
+Пример использования:
 
-This extension contributes the following settings:
+- Введите команду Show Notebooks by Tag.
+- Укажите директорию для поиска (например, /home/user/Documents/Notes).
+- Введите тег для поиска, например, JavaScript.
+- Будет выведен список всех конспектов, содержащих этот тег. Выберите один из них, чтобы открыть его.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Вставка изображения в текущий конспект
+Команда: extension.insertImageInNotebook
+Описание: Вставляет изображение в текущий открытый конспект в формате Markdown. Пользователь может выбрать файл изображения с локального диска. Изображение вставляется как Markdown-ссылка ![Image](path_to_image).
+Пример использования:
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Введите команду Insert Image in Notebook.
+- Выберите изображение с локального диска.
+- Вставленное изображение будет отображаться в файле как ![Image](path_to_image).
